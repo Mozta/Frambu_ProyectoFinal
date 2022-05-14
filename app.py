@@ -9,6 +9,7 @@ from flask import (
 import firebase_admin
 from firebase_admin import credentials, firestore
 import datetime
+import os
 
 
 app = Flask(__name__)
@@ -138,6 +139,6 @@ def delete():
         return Response(status=400)
 
 
-# Main
-if __name__ == "__main__":
-    app.run(debug=True)
+PORT = int(os.environ.get("PORT",8080))
+if __name__ == '__main__':
+    app.run(threaded=True, host='0.0.0.0', port=PORT)
