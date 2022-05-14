@@ -5,7 +5,7 @@ steps:
       [
         "--cache=true",
         "--cache-ttl=48h",
-        "--destination=gcr.io/$PROJECT_ID/frambu-proyectofinal:latest",
+        "--destination=gcr.io/$PROJECT_ID/Frambu:latest",
       ]
     # Deploy container image to Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
@@ -14,9 +14,9 @@ steps:
         "beta",
         "run",
         "deploy",
-        "frambu-proyectofinal",
+        "Frambu",
         "--image",
-        "gcr.io/$PROJECT_ID/frambu-proyectofinal:latest",
+        "gcr.io/$PROJECT_ID/Frambu:latest",
         "--region",
         "us-central1",
         "--allow-unauthenticated",
